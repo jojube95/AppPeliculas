@@ -1,0 +1,6 @@
+<div>
+    <!--Initialize list of movies, get the index of every movie to show the details with the showDetail method -->
+    <ion-list>
+        <button ion-item *ngFor="let movie of movies; let i = index;" (click)="showDetail(i)">{{movie.Title}}</button>
+    </ion-list>
+</div>

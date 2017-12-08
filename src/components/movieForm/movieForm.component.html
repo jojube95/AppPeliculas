@@ -1,0 +1,21 @@
+<form [formGroup]="todo" (ngSubmit)="logForm()">
+      <ion-item>
+        <ion-label>Título</ion-label>
+        <ion-textarea type="text" formControlName="title"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-select formControlName="type">
+          <ion-option checked="true" value="movie">Película</ion-option>
+          <ion-option value="series">Serie</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>Año</ion-label>
+          <ion-textarea formControlName="year"></ion-textarea>
+        </ion-item>
+      <button ion-button type="submit" [disabled]="!todo.valid">Submit</button>
+</form>
+
+<!-- Insert nested component movieList with shared variable movies-->
+<movieList [movies]="movies"></movieList>
+
